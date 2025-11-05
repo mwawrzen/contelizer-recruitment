@@ -1,13 +1,13 @@
 type ButtonProps = {
   text: string;
   onClick: () => void;
-  accent?: boolean;
+  type?: string;
 };
 
-function Button({ text, onClick, accent = false }: ButtonProps) {
+function Button({ text, onClick, type = 'neutral' }: ButtonProps) {
   return (
     <button
-      className={`btn btn-wide ${accent ? 'btn-accent' : ''}`}
+      className={`btn btn-${type}`}
       onClick={onClick}
     >
       {text}
