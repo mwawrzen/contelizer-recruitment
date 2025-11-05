@@ -4,9 +4,10 @@ import type { User } from "../utils/types";
 type EditionModalProps = {
   user: User;
   edit: (user: User) => void;
+  cancel: () => void;
 };
 
-function EditionModal({ user, edit }: EditionModalProps) {
+function EditionModal({ user, edit, cancel }: EditionModalProps) {
 
   const [name, setName] = useState<User['name']>(user.name);
   const [email, setEmail] = useState<User['email']>(user.email);
@@ -20,9 +21,15 @@ function EditionModal({ user, edit }: EditionModalProps) {
       modalRef.current.showModal();
   }, [modalRef])
 
+  const close = () => modalRef.current ? modalRef.current.close() : null;
+
+  function handleClose() {
+    close();
+    cancel();
+  }
+
   function handleEdit() {
-    if (modalRef.current)
-      modalRef.current.close();
+    close();
     edit({ id: user.id, name, email, gender, status });
   }
 
@@ -91,6 +98,9 @@ function EditionModal({ user, edit }: EditionModalProps) {
           </div>
         </fieldset>
         <div className="modal-action">
+          <button className="btn" onClick={handleClose}>
+            Close
+          </button>
           <button className="btn btn-primary" onClick={handleEdit}>
             Edit
           </button>
