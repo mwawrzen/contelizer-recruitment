@@ -1,6 +1,6 @@
 function UserSkeleton() {
   return (
-    <div className="flex w-xl flex-col gap-4">
+    <div className="flex w-3xl flex-col gap-4">
       <div className="flex items-center gap-4">
         <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
         <div className="flex flex-col gap-4">

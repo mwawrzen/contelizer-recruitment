@@ -35,7 +35,7 @@ function EditionModal({ user, edit, cancel }: EditionModalProps) {
 
   return (
     <dialog ref={modalRef} className="modal">
-      <div className="modal-box w-11/12 max-w-5xl">
+      <div className="modal-box w-11/12 max-w-3xl">
         <h3 className="font-bold text-lg mb-4">Edit user</h3>
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
           <label className="label">Name</label>

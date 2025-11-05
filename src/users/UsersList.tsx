@@ -44,7 +44,9 @@ function UsersList() {
       {
         isLoading ?
           <UserSkeletons /> :
-          <ul>{userItems?.length ? userItems : 'No users'}</ul>
+          <ul className="flex flex-col gap-4">
+            {userItems?.length ? userItems : 'No users'}
+          </ul>
       }
       {
         userToEdit !== null ? (
