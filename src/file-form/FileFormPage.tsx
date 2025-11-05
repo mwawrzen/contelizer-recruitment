@@ -12,6 +12,7 @@ function FileFormPage() {
     isFile,
     setFile,
     upload,
+    reset,
     content,
     setContent,
     status,
@@ -30,17 +31,24 @@ function FileFormPage() {
     <section className="flex flex-col items-center gap-4">
       {error && <Alert message={error} />}
       <FileInput
+        isEmpty={!isFile}
         changeAction={setFile}
       />
       {isFile && <Progress value={progress} />}
-      {
-        isFile && status !== 'uploading' &&
-          <Button text="Upload" onClick={upload} />
-      }
-      {
-        isFile && status === 'success' &&
-          <Button text="Shuffle" onClick={shuffleText} accent />
-      }
+      <div className="flex gap-4">
+        {
+          isFile && status !== 'uploading' &&
+            <Button text="Reset" onClick={reset} type="error" />
+        }
+        {
+          isFile && status !== 'uploading' &&
+            <Button text="Upload" onClick={upload} type="primary" />
+        }
+        {
+          isFile && status === 'success' &&
+            <Button text="Shuffle" onClick={shuffleText} type="success" />
+        }
+      </div>
       <Paragraph text={content} />
     </section>
   );
