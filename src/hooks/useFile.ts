@@ -67,12 +67,20 @@ export function useFile(
     setFile(file);
   }
 
+  function reset() {
+    setError(null);
+    setFile(null);
+    setContent(null);
+    setProgress(0);
+  }
+
   return {
     setFile: (file: File) => inputFile(file),
     setContent: (text: string) => setContent(text),
+    upload,
+    reset,
     content,
     status,
-    upload,
     progress,
     error,
     isFile: !!file
