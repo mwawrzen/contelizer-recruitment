@@ -23,6 +23,10 @@ function UsersList() {
     setUserToEdit(null);
   }
 
+  function hideModal() {
+    setUserToEdit(null);
+  }
+
   const userItems = data?.map((user: User) => (
     <UserCard
       key={user.id}
@@ -40,13 +44,14 @@ function UsersList() {
       {
         isLoading ?
           <UserSkeletons /> :
-          <ul>{userItems.length ? userItems : 'No users'}</ul>
+          <ul>{userItems?.length ? userItems : 'No users'}</ul>
       }
       {
         userToEdit !== null ? (
           <EditionModal
             user={userToEdit}
             edit={editUser}
+            cancel={hideModal}
           />
         ) : null
       }
