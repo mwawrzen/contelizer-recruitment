@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { User } from "../utils/types";
+import type { User } from "@/utils/types";
 
 type EditionModalProps = {
   user: User;

@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from "react";
-import { validatePESEL } from "../utils/validate-pesel";
-import { PeselError } from "../utils/types";
+import { validatePESEL } from "@/utils/validate-pesel";
+import { PeselError } from "@/utils/types";
 
 type ErrorType = {
   code: PeselError;

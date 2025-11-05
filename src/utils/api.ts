@@ -1,5 +1,5 @@
-import { token } from "../auth-token";
-import type { User } from "./types";
+import type { User } from "@/utils/types";
+import { token } from "@/auth-token";
 
 export const getUsers = async (query: string) => {
   const response = await fetch(`https://gorest.co.in/public/v2/users?name=${query}`, {

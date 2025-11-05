@@ -1,4 +1,4 @@
-import { PeselError } from "./types";
+import { PeselError } from "@/utils/types";
 
 export function validatePESEL(pesel: string): PeselError {
   if (pesel.length !== 11)

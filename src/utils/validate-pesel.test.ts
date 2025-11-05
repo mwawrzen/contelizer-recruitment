@@ -1,5 +1,5 @@
-import { PeselError } from "./types";
-import { validatePESEL } from "./validate-pesel";
+import { PeselError } from "@/utils/types";
+import { validatePESEL } from "@/utils/validate-pesel";
 
 describe('Testing PESEL validation', () => {
 

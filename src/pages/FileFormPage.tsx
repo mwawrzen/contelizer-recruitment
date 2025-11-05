@@ -1,9 +1,9 @@
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/file-form/Paragraph";
 import Alert from "../components/Alert";
 import { shuffleLettersInText } from "../utils/shuffle-letters";
-import FileInput from "./FileInput";
-import Button from "./Button";
-import Progress from "./Progress";
+import FileInput from "@/components/file-form/FileInput";
+import Button from "@/components/file-form/Button";
+import Progress from "@/components/file-form/Progress";
 import { useFile } from "../hooks/useFile";
 
 function FileFormPage() {

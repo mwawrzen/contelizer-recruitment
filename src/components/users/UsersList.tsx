@@ -1,12 +1,12 @@
 import { useState } from "react";
-import UserSkeletons from "../components/users/UserSkeletons";
-import { useUsersQuery } from "../hooks/useUsersQuery";
-import type { User } from "../utils/types";
-import EditionModal from "./EditionModal";
-import UserCard from "./UserCard";
-import Alert from "../components/Alert";
-import { useUserMutation } from "../hooks/useUserMutation";
-import SearchInput from "./SearchInput";
+import { useUsersQuery } from "@/hooks/useUsersQuery";
+import { useUserMutation } from "@/hooks/useUserMutation";
+import type { User } from "@/utils/types";
+import Alert from "@/components/Alert";
+import EditionModal from "@/components/users/EditionModal";
+import UserCard from "@/components/users/UserCard";
+import UserSkeletons from "@/components/users/UserSkeletons";
+import SearchInput from "@/components/users/SearchInput";
 
 function UsersList() {
 

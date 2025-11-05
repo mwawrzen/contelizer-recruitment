@@ -1,11 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router';
-import Home from './Home';
-import FileFormPage from './file-form/FileFormPage';
-import PeselPage from './pesel/PeselPage';
-import UsersPage from './users/UsersPage';
-import './index.css'
+
+import Home from '@/pages/Home';
+import FileFormPage from '@/pages/FileFormPage';
+import PeselPage from '@/pages/PeselPage';
+import UsersPage from '@/pages/UsersPage';
+
+import '@/index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,5 +20,5 @@ createRoot(document.getElementById('root')!).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);
