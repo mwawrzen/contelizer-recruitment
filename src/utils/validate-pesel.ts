@@ -12,7 +12,7 @@ export function validatePESEL(pesel: string): PeselError {
 
 function isCheckDigitCorrect(pesel: string): boolean {
 
-  const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
+  const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
   let checksum = 0;
 
   for (let i = 0; i < pesel.length - 1; i++)
