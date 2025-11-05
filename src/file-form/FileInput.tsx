@@ -1,10 +1,16 @@
-import type { ChangeEvent } from "react";
+import { useRef, type ChangeEvent } from "react";
 
 type FileInputProps = {
+  isEmpty: boolean;
   changeAction: (file: File) => void;
 };
 
-function FileInput({ changeAction }: FileInputProps) {
+function FileInput({ isEmpty, changeAction }: FileInputProps) {
+
+  const ref = useRef<HTMLInputElement | null>(null);
+
+  if (isEmpty && ref.current)
+    ref.current.value = '';
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files)
@@ -16,6 +22,7 @@ function FileInput({ changeAction }: FileInputProps) {
       <fieldset className="fieldset">
         <legend className="fieldset-legend">Pick a text file</legend>
         <input
+          ref={ref}
           type="file"
           accept=".txt"
           className="file-input file-input-accent"
