@@ -7,7 +7,7 @@ type UserCardProps = {
 
 function UserCard({ user, editAction }: UserCardProps) {
   return (
-    <div className="card w-3xl bg-base-200 card-sm shadow-sm">
+    <div className="card bg-base-200 card-sm shadow-sm">
       <div className="card-body">
         <h2 className="card-title">{user.name}</h2>
         <p className="text-sm">email: {user.email}</p>
