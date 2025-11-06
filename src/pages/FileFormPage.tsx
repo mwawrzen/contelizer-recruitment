@@ -12,6 +12,7 @@ function FileFormPage() {
     isFile,
     setFile,
     upload,
+    download,
     reset,
     content,
     setContent,
@@ -45,8 +46,12 @@ function FileFormPage() {
             <Button text="Upload" onClick={upload} type="primary" />
         }
         {
-          isFile && status === 'success' &&
-            <Button text="Shuffle" onClick={shuffleText} type="success" />
+          isFile && status === 'success' && (
+            <>
+              <Button text="Shuffle" onClick={shuffleText} type="success" />
+              <Button text="Download" onClick={download} />
+            </>
+          )
         }
       </div>
       <Paragraph text={content} />
