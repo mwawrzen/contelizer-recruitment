@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  base: '/contelizer-recruitment',
+  base: '/contelizer-recruitment/',
   plugins: [
     react(),
     tailwindcss(),
