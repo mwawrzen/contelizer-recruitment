@@ -1,6 +1,7 @@
 {
   "name": "contelizer",
   "private": true,
+  "homepage": "https://mwawrzen.github.io/contelizer-recruitment",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
