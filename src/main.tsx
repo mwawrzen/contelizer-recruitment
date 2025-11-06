@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router';
 
+import Layout from '@/pages/Layout';
 import Home from '@/pages/Home';
 import FileFormPage from '@/pages/FileFormPage';
 import PeselPage from '@/pages/PeselPage';
@@ -13,7 +14,8 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="/file" element={<FileFormPage />} />
           <Route path="/pesel" element={<PeselPage />} />
           <Route path="/users" element={<UsersPage />} />
