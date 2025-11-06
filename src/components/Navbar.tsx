@@ -6,9 +6,9 @@ type LinkType = {
 }
 
 const links: LinkType[] = [
-  { path: '/file', text: 'Zadanie 1' },
-  { path: '/pesel', text: 'Zadanie 2' },
-  { path: '/users', text: 'Zadanie 3' },
+  { path: '/file', text: 'Task 1' },
+  { path: '/pesel', text: 'Task 2' },
+  { path: '/users', text: 'Task 3' },
 ];
 
 function NavOption({ path, text }: LinkType) {
