@@ -20,10 +20,33 @@ export function useFile(
     }
   }
 
+  function download() {
+
+    if (!file) {
+      setError('No file');
+      return;
+    }
+
+    if (!content) {
+      setError('Problem with file content');
+      return;
+    }
+
+    const data = content;
+    const blob = new Blob([data], { type: 'text/plain' });
+    const fileURL = URL.createObjectURL(blob);
+    const downloadLink = document.createElement('a');
+
+    downloadLink.href = fileURL;
+    downloadLink.download = 'new_file.txt';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+  }
+
   function upload() {
 
     if (!file) {
-      console.error('No file');
+      setError('No file');
       return;
     }
 
@@ -48,6 +71,11 @@ export function useFile(
   }
 
   function inputFile(file: File) {
+
+    if (!file) {
+      setError('No file');
+      return;
+    }
 
     setFile(null);
     setContent(null);
@@ -78,6 +106,7 @@ export function useFile(
     setFile: (file: File) => inputFile(file),
     setContent: (text: string) => setContent(text),
     upload,
+    download,
     reset,
     content,
     status,
